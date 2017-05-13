@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8471214E1EC56E44003A2C9E /* CoreShop+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471214D1EC56E44003A2C9E /* CoreShop+Utils.swift */; };
+		847121521EC57817003A2C9E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847121511EC57817003A2C9E /* CoreData.framework */; };
 		84F684441EC4F64E00F2B0D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F684431EC4F64E00F2B0D3 /* AppDelegate.swift */; };
 		84F684461EC4F64E00F2B0D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F684451EC4F64E00F2B0D3 /* ViewController.swift */; };
 		84F684491EC4F64E00F2B0D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F684471EC4F64E00F2B0D3 /* Main.storyboard */; };
 		84F6844C1EC4F64F00F2B0D3 /* ShopsOnlinePractica.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84F6844A1EC4F64F00F2B0D3 /* ShopsOnlinePractica.xcdatamodeld */; };
 		84F6844E1EC4F64F00F2B0D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F6844D1EC4F64F00F2B0D3 /* Assets.xcassets */; };
 		84F684511EC4F64F00F2B0D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F6844F1EC4F64F00F2B0D3 /* LaunchScreen.storyboard */; };
+		84F684591EC5015000F2B0D3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F684581EC5015000F2B0D3 /* CoreDataManager.swift */; };
+		84F684601EC503EA00F2B0D3 /* AsyncData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6845F1EC503EA00F2B0D3 /* AsyncData.swift */; };
+		84F684621EC5077F00F2B0D3 /* JSONProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F684611EC5077F00F2B0D3 /* JSONProcessing.swift */; };
+		84F684641EC5099400F2B0D3 /* Shops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F684631EC5099400F2B0D3 /* Shops.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8471214D1EC56E44003A2C9E /* CoreShop+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreShop+Utils.swift"; sourceTree = "<group>"; };
+		847121511EC57817003A2C9E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		84F684401EC4F64E00F2B0D3 /* ShopsOnlinePractica.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopsOnlinePractica.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F684431EC4F64E00F2B0D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84F684451EC4F64E00F2B0D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +32,10 @@
 		84F6844D1EC4F64F00F2B0D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84F684501EC4F64F00F2B0D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84F684521EC4F64F00F2B0D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F684581EC5015000F2B0D3 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		84F6845F1EC503EA00F2B0D3 /* AsyncData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncData.swift; sourceTree = "<group>"; };
+		84F684611EC5077F00F2B0D3 /* JSONProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProcessing.swift; sourceTree = "<group>"; };
+		84F684631EC5099400F2B0D3 /* Shops.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shops.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847121521EC57817003A2C9E /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8471214F1EC5722E003A2C9E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84F684471EC4F64E00F2B0D3 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		847121501EC57817003A2C9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				847121511EC57817003A2C9E /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		84F684371EC4F64E00F2B0D3 = {
 			isa = PBXGroup;
 			children = (
 				84F684421EC4F64E00F2B0D3 /* ShopsOnlinePractica */,
 				84F684411EC4F64E00F2B0D3 /* Products */,
+				847121501EC57817003A2C9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +86,60 @@
 		84F684421EC4F64E00F2B0D3 /* ShopsOnlinePractica */ = {
 			isa = PBXGroup;
 			children = (
+				84F6845A1EC5030500F2B0D3 /* App */,
 				84F684431EC4F64E00F2B0D3 /* AppDelegate.swift */,
-				84F684451EC4F64E00F2B0D3 /* ViewController.swift */,
-				84F684471EC4F64E00F2B0D3 /* Main.storyboard */,
 				84F6844D1EC4F64F00F2B0D3 /* Assets.xcassets */,
 				84F6844F1EC4F64F00F2B0D3 /* LaunchScreen.storyboard */,
 				84F684521EC4F64F00F2B0D3 /* Info.plist */,
-				84F6844A1EC4F64F00F2B0D3 /* ShopsOnlinePractica.xcdatamodeld */,
 			);
 			path = ShopsOnlinePractica;
+			sourceTree = "<group>";
+		};
+		84F6845A1EC5030500F2B0D3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8471214F1EC5722E003A2C9E /* Views */,
+				84F6845E1EC503BD00F2B0D3 /* NetworkUtils */,
+				84F6845D1EC503A800F2B0D3 /* Models */,
+				84F6845C1EC5034800F2B0D3 /* Controllers */,
+				84F6845B1EC5031E00F2B0D3 /* Managers */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		84F6845B1EC5031E00F2B0D3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				84F684581EC5015000F2B0D3 /* CoreDataManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		84F6845C1EC5034800F2B0D3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84F684451EC4F64E00F2B0D3 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		84F6845D1EC503A800F2B0D3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84F6844A1EC4F64F00F2B0D3 /* ShopsOnlinePractica.xcdatamodeld */,
+				8471214D1EC56E44003A2C9E /* CoreShop+Utils.swift */,
+				84F684611EC5077F00F2B0D3 /* JSONProcessing.swift */,
+				84F684631EC5099400F2B0D3 /* Shops.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		84F6845E1EC503BD00F2B0D3 /* NetworkUtils */ = {
+			isa = PBXGroup;
+			children = (
+				84F6845F1EC503EA00F2B0D3 /* AsyncData.swift */,
+			);
+			name = NetworkUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +214,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F684621EC5077F00F2B0D3 /* JSONProcessing.swift in Sources */,
 				84F684461EC4F64E00F2B0D3 /* ViewController.swift in Sources */,
 				84F684441EC4F64E00F2B0D3 /* AppDelegate.swift in Sources */,
+				84F684601EC503EA00F2B0D3 /* AsyncData.swift in Sources */,
+				84F684641EC5099400F2B0D3 /* Shops.swift in Sources */,
+				84F684591EC5015000F2B0D3 /* CoreDataManager.swift in Sources */,
 				84F6844C1EC4F64F00F2B0D3 /* ShopsOnlinePractica.xcdatamodeld in Sources */,
+				8471214E1EC56E44003A2C9E /* CoreShop+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +381,7 @@
 				84F684571EC4F64F00F2B0D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
