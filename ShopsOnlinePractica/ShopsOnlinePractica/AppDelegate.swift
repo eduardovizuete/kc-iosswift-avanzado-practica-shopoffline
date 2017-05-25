@@ -33,8 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print(loadData)
         
         if !loadData {
-            // Download data from json and save in model core data
-            downloadDataFromJson(container: container.viewContext)
+            // Download data from internet to json and save in model core data
+            downloadDataFromNetToJson(container: container.viewContext)
         }
         
         return true
@@ -44,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Clean up all local caches
         AsyncData.removeAllLocalFiles()
         
-        // Create the model
         do{
             // Descargar los datos desde internet
             let urlJSONFile = "http://madrid-shops.com/json_new/getShops.php"
@@ -68,26 +67,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Clean up all local caches
         AsyncData.removeAllLocalFiles()
         
-        // Create the model
-        
-            // Descargar los datos desde internet
-            let urlJSONFile = URL(string: "http://madrid-shops.com/json_new/getShops.php")
-            URLSession.shared.dataTask(with: urlJSONFile!, completionHandler: {(data, response, error) in
-                guard let data = data, error == nil else {
-                    fatalError("Unable to read json file!")
+        // Descargar los datos desde internet
+        let urlJSONFile = URL(string: "http://madrid-shops.com/json_new/getShops.php")
+        URLSession.shared.dataTask(with: urlJSONFile!, completionHandler: {(data, response, error) in
+            guard let data = data, error == nil else {
+                fatalError("Unable to read json file!")
+            }
+            
+            do {
+                let d: NSDictionary = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments) as! NSDictionary
+                if d.allKeys.count > 0 {
+                    let arrayData = d.value(forKey: "result") as! NSArray
+                    for arrayElement in arrayData{
+                        let dict = arrayElement as! NSDictionary
+                        print("imprimiendo elemento: " + (dict.value(forKey: "description_es") as! String))
+                    }
                 }
                 
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:Any]
-                    let result = json["result"] as? [[String: Any]] ?? []
-                    print(result)
-                    //let shops = try decode(shops: result)
-                    //self.loadDataIntoModelCoreData(dataList: shops, context: container)
-                } catch let error as NSError {
-                    print(error)
-                }
-            }).resume()
-        
+                // Create the model
+                //let shops = try decode(shops: result)
+                //self.loadDataIntoModelCoreData(dataList: shops, context: container)
+            } catch let error as NSError {
+                print(error)
+            }
+        }).resume()
     }
 
     
