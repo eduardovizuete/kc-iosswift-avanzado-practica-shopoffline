@@ -18,7 +18,7 @@
 		84F684591EC5015000F2B0D3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F684581EC5015000F2B0D3 /* CoreDataManager.swift */; };
 		84F684601EC503EA00F2B0D3 /* AsyncData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6845F1EC503EA00F2B0D3 /* AsyncData.swift */; };
 		84F684621EC5077F00F2B0D3 /* JSONProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F684611EC5077F00F2B0D3 /* JSONProcessing.swift */; };
-		84F684641EC5099400F2B0D3 /* Shops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F684631EC5099400F2B0D3 /* Shops.swift */; };
+		84F684641EC5099400F2B0D3 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F684631EC5099400F2B0D3 /* Shop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		84F684581EC5015000F2B0D3 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		84F6845F1EC503EA00F2B0D3 /* AsyncData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncData.swift; sourceTree = "<group>"; };
 		84F684611EC5077F00F2B0D3 /* JSONProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONProcessing.swift; sourceTree = "<group>"; };
-		84F684631EC5099400F2B0D3 /* Shops.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shops.swift; sourceTree = "<group>"; };
+		84F684631EC5099400F2B0D3 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +129,7 @@
 				84F6844A1EC4F64F00F2B0D3 /* ShopsOnlinePractica.xcdatamodeld */,
 				8471214D1EC56E44003A2C9E /* CoreShop+Utils.swift */,
 				84F684611EC5077F00F2B0D3 /* JSONProcessing.swift */,
-				84F684631EC5099400F2B0D3 /* Shops.swift */,
+				84F684631EC5099400F2B0D3 /* Shop.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -218,7 +218,7 @@
 				84F684461EC4F64E00F2B0D3 /* ViewController.swift in Sources */,
 				84F684441EC4F64E00F2B0D3 /* AppDelegate.swift in Sources */,
 				84F684601EC503EA00F2B0D3 /* AsyncData.swift in Sources */,
-				84F684641EC5099400F2B0D3 /* Shops.swift in Sources */,
+				84F684641EC5099400F2B0D3 /* Shop.swift in Sources */,
 				84F684591EC5015000F2B0D3 /* CoreDataManager.swift in Sources */,
 				84F6844C1EC4F64F00F2B0D3 /* ShopsOnlinePractica.xcdatamodeld in Sources */,
 				8471214E1EC56E44003A2C9E /* CoreShop+Utils.swift in Sources */,

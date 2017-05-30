@@ -32,9 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loadData = UserDefaults.standard.bool(forKey: "loadDataFromInternet")
         print(loadData)
         
-        if !loadData {
+        if !loadData {	
             // Download data from internet to json and save in model core data
             downloadDataFromNetToJson(container: container.viewContext)
+            UserDefaults.standard.set(true, forKey: "loadDataFromInternet")            
         }
         
         return true
@@ -76,17 +77,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             do {
                 let d: NSDictionary = try JSONSerialization.jsonObject(with: data as Data, options: .allowFragments) as! NSDictionary
+                
+                var shops = [Shop]()
                 if d.allKeys.count > 0 {
                     let arrayData = d.value(forKey: "result") as! NSArray
                     for arrayElement in arrayData{
                         let dict = arrayElement as! NSDictionary
-                        print("imprimiendo elemento: " + (dict.value(forKey: "description_es") as! String))
+                        print("imprimiendo elemento: " + (dict.value(forKey: "name") as! String))
+                    
+                        let sh = try decode(data: dict)
+                        shops.append(sh)
                     }
                 }
                 
                 // Create the model
-                //let shops = try decode(shops: result)
-                //self.loadDataIntoModelCoreData(dataList: shops, context: container)
+                self.loadDataIntoModelCoreData(dataList: shops, context: container)
             } catch let error as NSError {
                 print(error)
             }
@@ -108,6 +113,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 cShop.description_es = shop.description_es
                 cShop.gps_lat = shop.gps_lat
                 cShop.gps_lon = shop.gps_lon
+                cShop.url = shop.url
+                cShop.img = shop.img
+                cShop.logo_img = shop.logo_img
                 
                 saveContext(context: context)
                 print("Insertando objeto CoreShop: %@", cShop )

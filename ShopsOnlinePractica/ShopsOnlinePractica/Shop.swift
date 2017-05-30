@@ -11,12 +11,15 @@ import Foundation
 class Shop {
     
     //MARK: - StoredProperties
-    let name            : String
-    let address         : String
-    let description_en  : String
-    let description_es  : String
-    let gps_lat         : String
-    let gps_lon         : String
+    var name            : String
+    var address         : String
+    var description_en  : String
+    var description_es  : String
+    var gps_lat         : String
+    var gps_lon         : String
+    var url             : String
+    var img             : String
+    var logo_img        : String
     
     //MARK: - Initialization
     init(   name: String,
@@ -24,7 +27,10 @@ class Shop {
             description_en: String,
             description_es: String,
             gps_lat: String,
-            gps_lon: String)
+            gps_lon: String,
+            url: String,
+            img: String,
+            logo_img: String)
     {
         self.name = name
         self.address = address
@@ -32,6 +38,9 @@ class Shop {
         self.description_es = description_es
         self.gps_lat = gps_lat
         self.gps_lon = gps_lon
+        self.url = url
+        self.img = img
+        self.logo_img = logo_img
     }
     
     //MARK: - Proxies

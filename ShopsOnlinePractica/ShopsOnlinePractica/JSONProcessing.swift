@@ -33,10 +33,35 @@ func decode(data dict: JSONDictionary) throws -> Shop{
     let description_es = extract(key: "description_es")
     let gps_lat = extract(key: "gps_lat")
     let gps_lon = extract(key: "gps_lon")
+    let url = extract(key: "url")
+    let img = extract(key: "img")
+    let logo_img = extract(key: "logo_img")
     
     return Shop(name: name, address: address, description_en:
                 description_en, description_es: description_es,
-                gps_lat: gps_lat, gps_lon: gps_lon)
+                                gps_lat: gps_lat, gps_lon: gps_lon,
+                                url: url, img: img, logo_img: logo_img)
+}
+
+func decode(data dict: NSDictionary) throws -> Shop{
+    
+    // parsing
+    
+    let name = dict.value(forKey: "name") as! String
+    let address = dict.value(forKey: "address") as! String
+    let description_en = dict.value(forKey: "description_en") as! String
+    let description_es = dict.value(forKey: "description_es") as! String
+    let gps_lat = dict.value(forKey: "gps_lat") as! String
+    let gps_lon = dict.value(forKey: "gps_lon") as! String
+    let url = dict.value(forKey: "url") as! String
+    let img = dict.value(forKey: "img") as! String
+    let logo_img = dict.value(forKey: "logo_img") as! String
+
+    
+    return Shop(name: name, address: address, description_en:
+        description_en, description_es: description_es,
+                        gps_lat: gps_lat, gps_lon: gps_lon,
+                        url: url, img: img, logo_img: logo_img)
 }
 
 func decode(shop dict: JSONDictionary?) throws -> Shop{

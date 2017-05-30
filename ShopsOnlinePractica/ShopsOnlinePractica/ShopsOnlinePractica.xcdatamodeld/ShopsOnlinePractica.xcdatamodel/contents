@@ -6,9 +6,12 @@
         <attribute name="description_es" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gps_lat" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gps_lon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="img" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logo_img" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CoreShop" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="CoreShop" positionX="-63" positionY="-18" width="128" height="178"/>
     </elements>
 </model>
