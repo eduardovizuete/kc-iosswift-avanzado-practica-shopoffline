@@ -118,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 cShop.logo_img = shop.logo_img
                 
                 saveContext(context: context)
-                print("Insertando objeto CoreShop: %@", cShop )
+                //print("Insertando objeto CoreShop: %@", cShop )
             }
         }
         

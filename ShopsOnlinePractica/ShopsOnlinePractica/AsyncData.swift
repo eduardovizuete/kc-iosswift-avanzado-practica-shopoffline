@@ -72,17 +72,24 @@ class  AsyncData {
             DispatchQueue.global(qos: .default).async {
                 self.delegate?.asyncData(self, willStartLoadingFrom: self.url)
                 
-                let tmpData = try! Data(contentsOf: self.url)
-                
-                DispatchQueue.main.async {
-                    self._hasExternalData = true
-                    self._data = tmpData
+                do {
+                    let tmpData = try Data(contentsOf: self.url)
                     
-                    self.delegate?.asyncData(self, didEndLoadingFrom: self.url)
-                    self.sendNotification()
-                    self.saveToLocalStorage()
-                    self._hasExternalData = true
+                    DispatchQueue.main.async {
+                        self._hasExternalData = true
+                        self._data = tmpData
+                        
+                        self.delegate?.asyncData(self, didEndLoadingFrom: self.url)
+                        self.sendNotification()
+                        self.saveToLocalStorage()
+                        self._hasExternalData = true
+                    }
+                } catch {
+                    print("Downloading error: " + self.url.absoluteString)
                 }
+                
+                
+                
             }
             
         }
@@ -94,6 +101,7 @@ class  AsyncData {
         let local = localURL(forRemoteURL: url)
         do{
             try data.write(to: local, options: .atomic)
+            print ("Guardando datos a cache: " + url.absoluteString)
         }catch let error as NSError{
             delegate?.asyncData(self, fileSystemDidFailAt: url, error: error)
         }

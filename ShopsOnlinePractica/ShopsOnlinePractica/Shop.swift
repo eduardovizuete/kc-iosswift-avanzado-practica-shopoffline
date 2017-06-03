@@ -20,6 +20,8 @@ class Shop {
     var url             : String
     var img             : String
     var logo_img        : String
+    let _image          : AsyncData
+    let _logo           : AsyncData
     
     //MARK: - Initialization
     init(   name: String,
@@ -30,7 +32,10 @@ class Shop {
             gps_lon: String,
             url: String,
             img: String,
-            logo_img: String)
+            logo_img: String,
+            _image: AsyncData,
+            _logo: AsyncData
+        )
     {
         self.name = name
         self.address = address
@@ -41,6 +46,12 @@ class Shop {
         self.url = url
         self.img = img
         self.logo_img = logo_img
+        self._image = _image
+        self._logo = _logo
+        
+        // Set delegate
+        self._image.delegate = self
+        self._logo.delegate = self
     }
     
     //MARK: - Proxies
@@ -65,4 +76,25 @@ extension Shop : Comparable {
         return (lhs.proxyForComparison() < rhs.proxyForComparison())
     }
 }
+
+//MARK: - AsyncDataDelegate
+extension Shop: AsyncDataDelegate{
+    
+    func asyncData(_ sender: AsyncData, didEndLoadingFrom url: URL) {
+        print("Finish with \(url)")        
+    }
+    
+    func asyncData(_ sender: AsyncData, shouldStartLoadingFrom url: URL) -> Bool {
+        return true
+    }
+    
+    func asyncData(_ sender: AsyncData, willStartLoadingFrom url: URL) {
+        print("Starting with \(url)")
+    }
+    
+    func asyncData(_ sender: AsyncData, didFailLoadingFrom url: URL, error: NSError){
+        print("Error loading \(url).\n \(error)")
+    }
+}
+
 
