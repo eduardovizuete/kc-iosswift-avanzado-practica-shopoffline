@@ -22,6 +22,7 @@ class Shop {
     var logo_img        : String
     let _image          : AsyncData
     let _logo           : AsyncData
+    let _mapImage       : AsyncData
     
     //MARK: - Initialization
     init(   name: String,
@@ -34,7 +35,8 @@ class Shop {
             img: String,
             logo_img: String,
             _image: AsyncData,
-            _logo: AsyncData
+            _logo: AsyncData,
+            _mapImage: AsyncData
         )
     {
         self.name = name
@@ -48,10 +50,12 @@ class Shop {
         self.logo_img = logo_img
         self._image = _image
         self._logo = _logo
+        self._mapImage = _mapImage
         
         // Set delegate
         self._image.delegate = self
         self._logo.delegate = self
+        self._mapImage.delegate = self
     }
     
     //MARK: - Proxies

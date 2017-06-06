@@ -34,8 +34,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if !loadData {	
             // Download data from internet to json and save in model core data
-            downloadDataFromNetToJson(container: container.viewContext)
-            UserDefaults.standard.set(true, forKey: "loadDataFromInternet")            
+            DispatchQueue.global(qos: .default).async {
+                self.downloadDataFromNetToJson(container: container.viewContext)
+            }
         }
         
         return true
@@ -123,6 +124,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         saveContext(context: context)
+        
+        DispatchQueue.main.async {
+            UserDefaults.standard.set(true, forKey: "loadDataFromInternet")
+        }
     }
 
 }

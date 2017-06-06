@@ -25,13 +25,14 @@ func decode(data dict: NSDictionary) throws -> Shop{
     let address = dict.value(forKey: "address") as! String
     let description_en = dict.value(forKey: "description_en") as! String
     let description_es = dict.value(forKey: "description_es") as! String
-    let gps_lat = dict.value(forKey: "gps_lat") as! String
-    let gps_lon = dict.value(forKey: "gps_lon") as! String
+    let gps_lat = (dict.value(forKey: "gps_lat") as! String).trimmingCharacters(in: .whitespaces)
+    let gps_lon = (dict.value(forKey: "gps_lon") as! String).trimmingCharacters(in: .whitespaces)
     let url = dict.value(forKey: "url") as! String
     let img = dict.value(forKey: "img") as! String
     let logo_img = dict.value(forKey: "logo_img") as! String
     let image: AsyncData
     let logoImage: AsyncData
+    let mapImage: AsyncData
 
     // AsyncData
     let mainBundle = Bundle.main
@@ -48,8 +49,20 @@ func decode(data dict: NSDictionary) throws -> Shop{
         logoImage = AsyncData(url: defaultImage, defaultData: try! Data(contentsOf: defaultImage))
     }
     
+    let urlMapImage = "http://maps.googleapis.com/maps/api/staticmap?center=" +
+        gps_lat +
+        "," +
+        gps_lon +
+        "&zoom=17&size=320x220&scale=2&markers=%7Ccolor:0x9C7B14%7C" +
+        gps_lat +
+        "," +
+        gps_lon
+    
+    mapImage = AsyncData(url: URL(string: urlMapImage)!, defaultData: try! Data(contentsOf: defaultImage))
+    
     image.data
     logoImage.data
+    mapImage.data
     
     return Shop(name: name,
                 address: address,
@@ -61,7 +74,8 @@ func decode(data dict: NSDictionary) throws -> Shop{
                 img: img,
                 logo_img: logo_img,
                 _image: image,
-                _logo: logoImage
+                _logo: logoImage,
+                _mapImage: mapImage
     )
 }
 

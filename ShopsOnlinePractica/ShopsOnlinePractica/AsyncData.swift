@@ -101,7 +101,7 @@ class  AsyncData {
         let local = localURL(forRemoteURL: url)
         do{
             try data.write(to: local, options: .atomic)
-            print ("Guardando datos a cache: " + url.absoluteString)
+            print ("Guardando datos a cache: " + url.absoluteString + " to file: " + local.absoluteString )
         }catch let error as NSError{
             delegate?.asyncData(self, fileSystemDidFailAt: url, error: error)
         }
