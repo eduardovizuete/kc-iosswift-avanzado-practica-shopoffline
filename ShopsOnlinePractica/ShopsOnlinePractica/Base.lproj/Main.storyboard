@@ -1,71 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="t1n-aS-x5n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="yaO-DH-vYS">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ShopsOnlinePractica" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="t1n-aS-x5n" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rLN-K8-8eq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hXi-wW-Yvi" kind="relationship" relationship="rootViewController" id="Trm-DQ-c5v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpe-mH-dqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-666" y="36"/>
+        </scene>
+        <!--Shop List View Controller-->
+        <scene sceneID="BK0-bK-ZhH">
+            <objects>
+                <viewController id="hXi-wW-Yvi" customClass="ShopListViewController" customModule="ShopsOnlinePractica" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="ef8-dU-UAh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Twe-BX-jqI"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="Cxb-2e-q6s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" restorationIdentifier="loadActIndicator" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Imf-MF-40j">
-                                <rect key="frame" x="169" y="181" width="37" height="37"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZH-GP-iy3">
-                                <rect key="frame" x="155" y="318" width="65" height="30"/>
-                                <state key="normal" title="Shop List"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="acD-Wj-5Lo">
+                                <rect key="frame" x="16" y="329" width="343" height="318"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sPF-RD-qPk">
+                                    <size key="itemSize" width="327" height="71"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="ShopListCell" id="6O2-Vt-Lsd" customClass="ShopListCell" customModule="ShopsOnlinePractica" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="0.0" width="327" height="71"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLs-3J-79h">
+                                                    <rect key="frame" x="127" y="8" width="208" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9TU-8T-lIP">
+                                                    <rect key="frame" x="-12" y="8" width="131" height="55"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="image" destination="9TU-8T-lIP" id="64h-1J-Oay"/>
+                                            <outlet property="nameLabel" destination="FLs-3J-79h" id="YEd-D6-UNc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <segue destination="MgU-W4-lku" kind="show" id="IDC-LZ-apu"/>
+                                    <outlet property="dataSource" destination="hXi-wW-Yvi" id="Y2e-uy-Tmt"/>
+                                    <outlet property="delegate" destination="hXi-wW-Yvi" id="Qpf-Qb-W0I"/>
                                 </connections>
-                            </button>
+                            </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="tZH-GP-iy3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6OE-N1-miD"/>
-                            <constraint firstItem="Imf-MF-40j" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="161" id="FXB-Ql-ATp"/>
-                            <constraint firstItem="Imf-MF-40j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="153" id="NqI-Mp-go5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Imf-MF-40j" secondAttribute="trailing" constant="153" id="ZvM-7J-SBu"/>
-                            <constraint firstItem="tZH-GP-iy3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="j2V-iP-yES"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Imf-MF-40j" secondAttribute="bottom" constant="449" id="kKt-sh-ncM"/>
-                            <constraint firstItem="tZH-GP-iy3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s9x-5Y-0a2"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="VEv-QL-Ju1">
-            <objects>
-                <viewController id="MgU-W4-lku" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Mae-XG-emm"/>
-                        <viewControllerLayoutGuide type="bottom" id="E61-CO-YzE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="lZr-pv-7Uk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6Z3-XL-COS"/>
+                    <connections>
+                        <outlet property="collectionView" destination="acD-Wj-5Lo" id="W8B-a1-7Uh"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="htK-Sn-AKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YXc-aK-6eT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="743" y="36"/>
+            <point key="canvasLocation" x="224.80000000000001" y="35.532233883058474"/>
         </scene>
     </scenes>
 </document>

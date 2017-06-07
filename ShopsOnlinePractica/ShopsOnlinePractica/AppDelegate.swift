@@ -39,7 +39,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        self.context = container.viewContext
+        
+        injectContextToFirstViewController()
+        
         return true
+    }
+    
+    func injectContextToFirstViewController() {
+        if let navController = window?.rootViewController as? UINavigationController,
+            let initialViewController = navController.topViewController as? ShopListViewController
+        {
+            initialViewController.context = self.context
+        }
     }
     
     func downloadDataFromJson(container: NSManagedObjectContext) {
