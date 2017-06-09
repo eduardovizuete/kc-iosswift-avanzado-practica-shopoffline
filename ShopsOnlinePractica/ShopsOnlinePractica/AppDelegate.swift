@@ -41,8 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.context = container.viewContext
         
-        injectContextToFirstViewController()
-        
         return true
     }
     
@@ -139,6 +137,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DispatchQueue.main.async {
             UserDefaults.standard.set(true, forKey: "loadDataFromInternet")
+            // inyectar contexto al siguiente controlador
+            self.injectContextToFirstViewController()
         }
     }
 

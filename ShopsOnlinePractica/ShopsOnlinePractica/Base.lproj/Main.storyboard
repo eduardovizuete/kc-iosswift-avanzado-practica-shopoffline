@@ -74,10 +74,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="hXi-wW-Yvi" id="Y2e-uy-Tmt"/>
-                                    <outlet property="delegate" destination="hXi-wW-Yvi" id="Qpf-Qb-W0I"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

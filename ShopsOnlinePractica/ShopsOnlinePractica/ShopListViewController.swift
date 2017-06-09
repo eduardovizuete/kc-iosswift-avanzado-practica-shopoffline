@@ -11,7 +11,12 @@ import CoreData
 
 class ShopListViewController: UIViewController {
 
-    var context: NSManagedObjectContext?
+    var context: NSManagedObjectContext? {
+        didSet {
+            self.collectionView.delegate = self
+            self.collectionView.dataSource = self
+        }
+    }
     
     var _fetchedResultsController: NSFetchedResultsController<CoreShop>? = nil
     
