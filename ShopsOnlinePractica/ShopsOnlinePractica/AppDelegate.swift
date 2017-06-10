@@ -128,6 +128,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 cShop.img = shop.img
                 cShop.logo_img = shop.logo_img
                 
+                cShop.imgFileHash = shop.imgFileHash
+                cShop.logoFileHash = shop.logoFileHash
+                cShop.mapImageHash = shop.mapImageHash
+                
                 saveContext(context: context)
                 //print("Insertando objeto CoreShop: %@", cShop )
             }

@@ -33,20 +33,22 @@ func decode(data dict: NSDictionary) throws -> Shop{
     let image: AsyncData
     let logoImage: AsyncData
     let mapImage: AsyncData
+    let imgFileHash = String(img.hashValue)
+    let logoFileHash = String(logo_img.hashValue)
 
     // AsyncData
     let mainBundle = Bundle.main
     let defaultImage = mainBundle.url(forResource: "emptyBookCover", withExtension: "png")!
     if URL(string: img) != nil {
-        image = AsyncData(url: URL(string: img)!, defaultData: try! Data(contentsOf: defaultImage))
+        image = AsyncData(url: URL(string: img)!, defaultData: try! Data(contentsOf: defaultImage), nameFileHash: imgFileHash)
     } else {
-        image = AsyncData(url: defaultImage, defaultData: try! Data(contentsOf: defaultImage))
+        image = AsyncData(url: defaultImage, defaultData: try! Data(contentsOf: defaultImage), nameFileHash: imgFileHash)
     }
     
     if URL(string: logo_img) != nil {
-        logoImage = AsyncData(url: URL(string: logo_img)!, defaultData: try! Data(contentsOf: defaultImage))
+        logoImage = AsyncData(url: URL(string: logo_img)!, defaultData: try! Data(contentsOf: defaultImage), nameFileHash: logoFileHash)
     } else {
-        logoImage = AsyncData(url: defaultImage, defaultData: try! Data(contentsOf: defaultImage))
+        logoImage = AsyncData(url: defaultImage, defaultData: try! Data(contentsOf: defaultImage), nameFileHash: logoFileHash)
     }
     
     let urlMapImage = "http://maps.googleapis.com/maps/api/staticmap?center=" +
@@ -58,7 +60,9 @@ func decode(data dict: NSDictionary) throws -> Shop{
         "," +
         gps_lon
     
-    mapImage = AsyncData(url: URL(string: urlMapImage)!, defaultData: try! Data(contentsOf: defaultImage))
+    let mapImageHash = String(urlMapImage.hashValue)
+    
+    mapImage = AsyncData(url: URL(string: urlMapImage)!, defaultData: try! Data(contentsOf: defaultImage), nameFileHash: mapImageHash)
     
     image.data
     logoImage.data
@@ -75,7 +79,10 @@ func decode(data dict: NSDictionary) throws -> Shop{
                 logo_img: logo_img,
                 _image: image,
                 _logo: logoImage,
-                _mapImage: mapImage
+                _mapImage: mapImage,
+                imgFileHash: imgFileHash,
+                logoFileHash: logoFileHash,
+                mapImageHash: mapImageHash
     )
 }
 

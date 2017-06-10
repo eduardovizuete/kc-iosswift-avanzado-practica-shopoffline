@@ -25,6 +25,43 @@ class ShopListCell: UICollectionViewCell {
         set {
             _coreShop = newValue
             nameLabel.text = newValue.name
+            
+            // load cache local image
+            let fileName = newValue.logoFileHash
+            
+            print("Cargando: " + fileName!)
+            
+            let fm = FileManager.default
+            let urls = fm.urls(for: .cachesDirectory, in: .userDomainMask)
+            
+            guard let url = urls.last?.appendingPathComponent("AsyncData.Type") else {
+                fatalError("Unable to create url for local storage at \(urls)")
+            }
+            
+            let localFile = url.appendingPathComponent(fileName!)
+            
+            print("Cargando: " + localFile.absoluteString)
+            
+            let data = NSData(contentsOf: localFile)
+            
+            if data != nil {
+                image.image = UIImage(data: data as! Data)
+            } else {
+                let mainBundle = Bundle.main
+                let defaultImage = mainBundle.url(forResource: "emptyBookCover", withExtension: "png")!
+                
+                image.image = UIImage(data: try! Data(contentsOf: defaultImage))
+            }
+                       
+            
+//            let localFile = url.appendingPathComponent(fileName!).absoluteString
+//            
+//            print("Cargando: " + localFile)
+//            
+//            image.image = UIImage(contentsOfFile: localFile)
+            
+            //let defaultImage = mainBundle.url(forResource: "emptyBookCover", withExtension: "png")!
+            //let image = AsyncData(url: imgURL, defaultData: try! Data(contentsOf: defaultImage))
         }
     }
     

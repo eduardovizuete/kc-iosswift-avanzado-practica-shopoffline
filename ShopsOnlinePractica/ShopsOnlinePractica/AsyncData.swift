@@ -22,7 +22,8 @@ class  AsyncData {
     private var _hasExternalData = false
     weak public var delegate: AsyncDataDelegate?
     
-    
+    let nameFileHash: String
+       
     var data : Data{
         get{
             if !_hasExternalData{
@@ -34,9 +35,11 @@ class  AsyncData {
         }
     }
     
-    init(url: URL, defaultData : Data){
+    init(url: URL, defaultData : Data, nameFileHash: String){
         self.url = url
         self._data = defaultData
+        
+        self.nameFileHash = nameFileHash
     }
     
     //MARK: - Data Fetching
@@ -142,7 +145,9 @@ class  AsyncData {
         // That would cause collissions. Instead, we'll use the full url's
         // hashValue as a file name.
         // That's what core data does, BTW.
-        let fileName = String(remoteURL.hashValue)
+        //let fileName = String(remoteURL.hashValue)
+        let fileName = nameFileHash
+        
         return AsyncData.sandboxSubfolderURL().appendingPathComponent(fileName)
         
     }

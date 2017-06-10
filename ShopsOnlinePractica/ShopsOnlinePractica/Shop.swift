@@ -24,6 +24,10 @@ class Shop {
     let _logo           : AsyncData
     let _mapImage       : AsyncData
     
+    let imgFileHash     : String
+    let logoFileHash    : String
+    let mapImageHash    : String
+    
     //MARK: - Initialization
     init(   name: String,
             address: String,
@@ -36,7 +40,10 @@ class Shop {
             logo_img: String,
             _image: AsyncData,
             _logo: AsyncData,
-            _mapImage: AsyncData
+            _mapImage: AsyncData,
+            imgFileHash: String,
+            logoFileHash: String,
+            mapImageHash: String
         )
     {
         self.name = name
@@ -51,6 +58,10 @@ class Shop {
         self._image = _image
         self._logo = _logo
         self._mapImage = _mapImage
+        
+        self.imgFileHash = imgFileHash
+        self.logoFileHash = logoFileHash
+        self.mapImageHash = mapImageHash
         
         // Set delegate
         self._image.delegate = self
