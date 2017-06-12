@@ -82,7 +82,8 @@ func decode(data dict: NSDictionary) throws -> Shop{
                 _mapImage: mapImage,
                 imgFileHash: imgFileHash,
                 logoFileHash: logoFileHash,
-                mapImageHash: mapImageHash
+                mapImageHash: mapImageHash,
+                mapImageUrl: urlMapImage
     )
 }
 

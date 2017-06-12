@@ -11,10 +11,11 @@
         <attribute name="logo_img" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="logoFileHash" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mapImageHash" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mapImageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CoreShop" positionX="-63" positionY="-18" width="128" height="225"/>
+        <element name="CoreShop" positionX="-63" positionY="-18" width="128" height="238"/>
     </elements>
 </model>

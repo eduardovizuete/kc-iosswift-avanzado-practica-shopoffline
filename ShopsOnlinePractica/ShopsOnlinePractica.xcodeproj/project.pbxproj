@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8471214E1EC56E44003A2C9E /* CoreShop+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471214D1EC56E44003A2C9E /* CoreShop+Utils.swift */; };
 		847121521EC57817003A2C9E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847121511EC57817003A2C9E /* CoreData.framework */; };
+		847FAEC11EECF994009047FA /* DetailShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FAEC01EECF994009047FA /* DetailShopViewController.swift */; };
+		84A848A51EEEFC6400E0D4D6 /* madrid_shops.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A848A41EEEFC6400E0D4D6 /* madrid_shops.png */; };
 		84B5EE6E1EE73F84004BDFB1 /* ShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE6D1EE73F84004BDFB1 /* ShopListViewController.swift */; };
 		84B5EE721EE749C6004BDFB1 /* ShopListView+NSFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE711EE749C6004BDFB1 /* ShopListView+NSFetchedResultsController.swift */; };
 		84B5EE741EE74D87004BDFB1 /* ShopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B5EE731EE74D87004BDFB1 /* ShopListCell.swift */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		8471214D1EC56E44003A2C9E /* CoreShop+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreShop+Utils.swift"; sourceTree = "<group>"; };
 		847121511EC57817003A2C9E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		847FAEC01EECF994009047FA /* DetailShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailShopViewController.swift; sourceTree = "<group>"; };
+		84A848A41EEEFC6400E0D4D6 /* madrid_shops.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = madrid_shops.png; sourceTree = "<group>"; };
 		84B5EE6D1EE73F84004BDFB1 /* ShopListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListViewController.swift; sourceTree = "<group>"; };
 		84B5EE711EE749C6004BDFB1 /* ShopListView+NSFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShopListView+NSFetchedResultsController.swift"; sourceTree = "<group>"; };
 		84B5EE731EE74D87004BDFB1 /* ShopListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopListCell.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 				84B5EE6C1EE73F39004BDFB1 /* ShopListView */,
 				84F684471EC4F64E00F2B0D3 /* Main.storyboard */,
 				84B5EE731EE74D87004BDFB1 /* ShopListCell.swift */,
+				847FAEC01EECF994009047FA /* DetailShopViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 		84DD07FD1EDF4DBC001A5E88 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				84A848A41EEEFC6400E0D4D6 /* madrid_shops.png */,
 				84DD07FE1EDF4DE0001A5E88 /* emptyBookCover.png */,
 			);
 			name = Resources;
@@ -236,6 +242,7 @@
 				84F6844E1EC4F64F00F2B0D3 /* Assets.xcassets in Resources */,
 				84DD07FF1EDF4DE0001A5E88 /* emptyBookCover.png in Resources */,
 				84F684491EC4F64E00F2B0D3 /* Main.storyboard in Resources */,
+				84A848A51EEEFC6400E0D4D6 /* madrid_shops.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +264,7 @@
 				8471214E1EC56E44003A2C9E /* CoreShop+Utils.swift in Sources */,
 				84B5EE741EE74D87004BDFB1 /* ShopListCell.swift in Sources */,
 				84B5EE6E1EE73F84004BDFB1 /* ShopListViewController.swift in Sources */,
+				847FAEC11EECF994009047FA /* DetailShopViewController.swift in Sources */,
 				84B5EE721EE749C6004BDFB1 /* ShopListView+NSFetchedResultsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

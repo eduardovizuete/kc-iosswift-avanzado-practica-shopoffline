@@ -75,17 +75,77 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="madrid_shops.png" translatesAutoresizingMaskIntoConstraints="NO" id="XHQ-NP-f0r">
+                                <rect key="frame" x="16" y="72" width="343" height="243"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="6Z3-XL-COS"/>
                     <connections>
                         <outlet property="collectionView" destination="acD-Wj-5Lo" id="W8B-a1-7Uh"/>
+                        <segue destination="86D-BZ-wjl" kind="show" identifier="shopDetail" id="oMa-78-c5E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXc-aK-6eT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="224.80000000000001" y="35.532233883058474"/>
         </scene>
+        <!--Detail Shop View Controller-->
+        <scene sceneID="jGH-wP-tlk">
+            <objects>
+                <viewController id="86D-BZ-wjl" customClass="DetailShopViewController" customModule="ShopsOnlinePractica" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vft-mH-TE4"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y2K-bZ-8BO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CG8-6n-Aip">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ogj-sh-NOh" userLabel="imageViewMap">
+                                <rect key="frame" x="15" y="110" width="344" height="231"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkb-rX-zsL" userLabel="descLabel">
+                                <rect key="frame" x="16" y="369" width="343" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6et-u1-Xwu" userLabel="addressLabel">
+                                <rect key="frame" x="16" y="503" width="343" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVD-ND-Kwo" userLabel="nameLabel">
+                                <rect key="frame" x="15" y="64" width="343" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="nameLabel"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="6et-u1-Xwu" id="ue5-0c-QvA"/>
+                        <outlet property="descLabel" destination="jkb-rX-zsL" id="DX7-Rx-gG7"/>
+                        <outlet property="mapImageView" destination="ogj-sh-NOh" id="Lgj-6w-1wt"/>
+                        <outlet property="nameLabel" destination="dVD-ND-Kwo" id="def-cN-4KP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ir0-EB-JMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="224.80000000000001" y="776.76161919040487"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="madrid_shops.png" width="933" height="530"/>
+    </resources>
 </document>

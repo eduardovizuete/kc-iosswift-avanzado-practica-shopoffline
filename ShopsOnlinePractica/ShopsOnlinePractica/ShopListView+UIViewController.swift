@@ -21,5 +21,24 @@ extension ShopListViewController: UICollectionViewDataSource, UICollectionViewDe
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        print ("Seleccionada fila:" + indexPath.row.description)
+        
+        let shop = self.fetchedResultsController.object(at: indexPath)
+        
+        shopName = shop.name!
+        desc = shop.description_es!
+        address = shop.address!
+        mapHash = shop.mapImageHash!
+        
+        print("Nombre: " + shop.name!)
+        print("Descripcion: " + shop.description_es!)
+        print("Address: " + shop.address!)
+        print("Mapa: " + shop.mapImageHash!.description)
+        
+        self.performSegue(withIdentifier: "shopDetail", sender: self)
+    }
+    
 }
 

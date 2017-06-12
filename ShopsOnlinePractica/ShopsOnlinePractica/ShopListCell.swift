@@ -52,16 +52,6 @@ class ShopListCell: UICollectionViewCell {
                 
                 image.image = UIImage(data: try! Data(contentsOf: defaultImage))
             }
-                       
-            
-//            let localFile = url.appendingPathComponent(fileName!).absoluteString
-//            
-//            print("Cargando: " + localFile)
-//            
-//            image.image = UIImage(contentsOfFile: localFile)
-            
-            //let defaultImage = mainBundle.url(forResource: "emptyBookCover", withExtension: "png")!
-            //let image = AsyncData(url: imgURL, defaultData: try! Data(contentsOf: defaultImage))
         }
     }
     
